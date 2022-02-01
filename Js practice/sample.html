@@ -1,0 +1,21 @@
+<script>
+    const today = new Date()
+    let day = today.getDay()
+    document.write(day)
+    document.write('<br/>')
+    let dayList = ['sun','Monday','tue','wed','thur']
+    document.write('today is :' + dayList[day] + '.')
+    let hours = today.getHours()
+    document.write('<br/>')
+    document.write("hours:"+ hours)
+    document.write('<br/>')
+    let minutes = today.getMinutes()
+    document.write("Minutes:"+ minutes)
+    document.write('<br/>')
+   let current = (hours >= 12) ? 'PM' : 'AM'
+   document.write(current)
+   document.write('<br/>')
+   document.write('current time is :' + hours +":"+ minutes  + current)
+       
+    
+</script>

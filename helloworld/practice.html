@@ -1,0 +1,63 @@
+<script>
+
+    // two sum EX:[1,2,3,4,4,5]  we need to get 8 
+    function twoSum (array,target){
+        var sums = []
+            for(var i=0;i<=array.length;i++){
+                for(var j=i+1;j<=array.length;j++){
+                    if(array[i] + array[j] == target){
+                       sums.push(array[i]+array[j])
+                    }
+                }
+            }
+            return sums
+    }
+    twoSum([2,4,5,1],6)
+
+
+    var i,j
+    for(i=1;i<=5;i++){
+        for(j=1;j<=i;j++){
+            document.write("* &nbsp;&nbsp")
+        }
+        document.write("<br>")
+    }
+      
+    var a,b
+    for(i=1;i<=5;i++){
+        for(j=1;j<=i;j++){
+            document.write(i)
+        }
+        document.write("<br>")
+    }
+
+    var rows=5
+    for(i=1;i<=rows;i++){
+        for(k=1;k<=(rows-i);k++){
+        document.write("&nbsp;")
+    }
+        for(j=1;j<=i;j++){
+            document.write( "*  ")
+        }
+    document.write("<br>")
+
+    }
+ // palindrome 
+    var string = prompt('enter the string')
+    document.write(string)
+    document.write("<br>")
+    var len = string.length;
+    var msg = 'it is palindrome'
+    document.write(len)
+    document.write("<br>")
+
+    for(var i = 0;i<len/2;i++){
+           // document.write(string[i])
+            //document.write(string[len - 1 - i])
+            if(string[i] !== string[len - 1 -i]){
+                msg = 'its not a palindrome '
+            }
+    }
+    document.write(`${string}:${msg}`)
+
+</script>

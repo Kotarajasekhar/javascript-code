@@ -1,0 +1,35 @@
+<script>
+    var x= 100;
+    document.write(x)
+    
+    /* fuctional scope */
+    function a(){
+        var a1=10
+        document.write(a1)
+    }
+  a()
+
+//   global scope
+  var global = "Global"
+  function globalScope(){    
+  }
+  document.write(global)
+  globalScope()
+
+  var q=20 , w=10;
+ {
+     var temp = q;
+     q=w;
+     w=temp
+ }
+ document.write(temp)  // gives output of 20 
+
+ var q=20 , w=10;
+ {
+     let temp = q;
+     q=w;
+     w=temp
+ }
+ document.write(temp) // dont give output because of let is a block scope 
+
+</script>

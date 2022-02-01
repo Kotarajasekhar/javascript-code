@@ -1,0 +1,42 @@
+<script>
+    // function isPrime(num){
+    //     if(num < 2){
+    //         return (`${num} is not prime`)
+    //     }
+    //     for(let i = 2 ; i<num ; i++){
+    //         if(num % i === 0){
+    //             return(`${num} is not a prime number`)
+    //         }
+    //     }
+    //     return (`${num} is prime`)
+    // }
+
+    // console.log(isPrime(61))
+
+    // let number = parseInt(prompt('enter number'))
+    // function primeNumber(number){
+    //     for(let i=2 ;i<number ; i++){
+    //             if(number % i === 0){
+    //                 return('Not a prime')
+    //             }
+    //     }
+    //     return('prime number')
+    // }
+    // console.log(primeNumber(number))
+
+    function prime(){
+        for (let i =2;i<=16;i++){
+            let notPrime=false;
+            for(let j = 2; j<i ; j++){
+                if(i%j ==0){
+                    notPrime = true
+                }
+            }
+            if(i>1&&notPrime==false){
+                console.log(i)
+            }
+        }
+    }
+    console.log(prime())
+    
+</script>

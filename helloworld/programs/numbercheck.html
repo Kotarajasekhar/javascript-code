@@ -1,0 +1,33 @@
+<script>
+    // const number = parseInt(prompt('enter number : '))
+    //         if(number % 2 === 0){
+    //             document.write('entered number is even')
+    //         }
+    //         else{
+    //             document.write('not an even number')
+    //         }
+   
+//    const Number = parseInt(prompt('enter number:'))
+//       if(Number % 2 === 1){
+//         document.write('entered number is odd')
+//             }
+//         else{
+//                 document.write('not an odd number')
+//             }
+
+const primeNumber = parseInt(prompt('enter number:'))
+let isPrime = true;
+
+for(let i = 2; i<primeNumber ; i++){
+    if(primeNumber % i === 0){
+        isPrime = false;
+            break;
+    }
+}
+if (isPrime) {
+        console.log(`${primeNumber} is a prime number`);
+    } else {
+        console.log(`${primeNumber} is a not prime number`);
+    }
+      
+</script>

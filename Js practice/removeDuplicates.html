@@ -1,0 +1,86 @@
+<script>
+    let a=[1,2,3,2,1,5,8]
+    let b=[]
+    let len=a.length;
+    for(let i =0;i<len;i++){
+        if(b.indexOf(a[i]) === -1 ){
+            b.push(a[i])
+        }
+    }
+    console.log(b)
+
+    const obj = [
+        {
+        name:"Kesava",
+        location:"Tpt",
+        id:"1"
+        },
+        {
+        name:"Kesava",
+        location:"Tpt",
+        id:"1"
+        },
+        {
+        name:"rama",
+        location:"Tpt",
+        id:"12"
+        },
+        {
+        name:"raj",
+        location:"Tpt",
+        id:"13"
+        },
+        {
+        name:"raj",
+        location:"Tpt",
+        id:"13"
+        }
+    ]
+
+    function myFn(key){
+            let result = {}
+            obj.forEach((item) => {
+                if(!result[item[key]]){
+                    result[item[key]] = 1
+                }
+                else{
+                    var count = result[item[key]]
+                    result[item[key]] = count + 1
+                }
+            })
+            console.log(result)
+    }
+    console.log(myFn('name'))
+
+    let arrayDuplicates = [1,2,3,4,3,2,1] 
+    let count = 0
+    for(let i = 0;i<arrayDuplicates.length;i++){
+        for(let j =i+1;j<arrayDuplicates.length;j++){
+            if(arrayDuplicates[i] == arrayDuplicates[j]){
+                count++
+                break
+            }
+        }
+    }
+    console.log('dupliactes::'+count)
+
+    function countLetters(str){
+        let tempArr = str.split('')
+        let letters = []
+        let count = 1
+        for(let i=0;i<tempArr.length;i++){
+            if(tempArr[i] === tempArr[i+1]){
+                count++
+            }
+            else{
+                let value=`${count}${tempArr[i]}`
+                letters=[...letters,value]
+                count=1
+            }
+        }
+
+
+        return letters.join('')
+    }
+    console.log(countLetters('qwertwreryrusf'))
+</script>

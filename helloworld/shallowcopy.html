@@ -1,0 +1,30 @@
+<script>
+    var employee = {
+    eid: "E102",
+    ename: "Jack",
+    eaddress: "New York",
+    salary: 50000
+}
+
+console.log('Employee=>' , employee)
+var newEmployee = employee
+console.log('New employee=>', newEmployee)
+newEmployee.ename = 'Rajasekhar'
+console.log('New employee=>', newEmployee)
+console.log('employee=>', employee)
+
+var deepEmployee = {
+    eid: "E102",
+    ename: "Jackson",
+    eaddress: "New York",
+    salary: 50000
+}
+console.log('deepEmployee=>' , deepEmployee)
+var NewDeepEmployee = JSON.parse(JSON.stringify(deepEmployee))
+console.log('deepEmployee=>' , deepEmployee)
+console.log('deepNewEmployee=>' , NewDeepEmployee)
+NewDeepEmployee.name='Reddy'
+console.log('deepNewEmployee=>' , NewDeepEmployee)
+console.log('deepEmployee=>' , deepEmployee)
+
+</script>

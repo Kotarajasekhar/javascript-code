@@ -1,0 +1,39 @@
+<script>
+//     let numbers = [1,8,9,2]
+//     function sorter(array){
+//         let swap , done = false,swapped;
+//         while(!done){
+//             swapped = 0
+//         for(let i = 1; i<array.length ; i++){
+//         //compare
+//         if(array[i-1] > array[i]){
+//             //swap
+//             swap = array[i]
+//             array[i] = array[i-1]
+//             array[i-1] = swap
+//             swapped=1
+//         }
+//     }
+// }
+//         return array
+//     }
+//     console.log(sorter(numbers))
+
+let arr = [12,2,35,4,8,9,123,0]
+for(let i=1 ; i< arr.length ; i++){
+    for(let j=0;j<arr.length;j++){
+        if(arr[i] < arr[j]){ // 2 < 12
+            var x = arr[i]; // x = 2
+            arr[i] = arr[j]; // arr[1] = 12
+            arr[j] = x   // 
+        }
+    }
+}
+console.log(arr)
+
+// getting first element from array
+
+let first = [[1,2,3,4],5,6]
+console.log(first[0])
+
+</script>

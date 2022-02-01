@@ -1,0 +1,91 @@
+<script>
+    var student = {
+    name : "David Rayy",
+    sclass : "VI",
+    rollno : 12 };
+    
+    // finding keys 
+   let result = Object.keys(student)
+    console.log(result)
+    // deleting rollno
+    let result1 = delete student.rollno
+    console.log(student)
+
+    //length of object
+   let lengthfinding = Object.keys(student).length
+   console.log(lengthfinding)
+
+  //adding property
+  let add = student['rollno'] = 123
+  console.log(add)
+  console.log(student)
+
+  var library = [ 
+   {
+       author: 'Bill Gates',
+       title: 'The Road Ahead',
+       readingStatus: true
+   },
+   {
+       author: 'Steve Jobs',
+       title: 'Walter Isaacson',
+       readingStatus: true
+   },
+   {
+       author: 'Suzanne Collins',
+       title:  'Mockingjay: The Final Book of The Hunger Games', 
+       readingStatus: false
+   }];
+
+   for(let i =0;i<library.length;i++){
+       resultAut= library[i].author + '' + library[i].name + '' +
+       library[i].readingStatus
+   }
+   
+   console.log(resultAut)
+
+   //bubble sorting 
+   let bbs = [6,4,0, 3,-2,1]
+   for(let i = 1;i<bbs.length;i++){
+       for(let j = 0;j<bbs.length;j++){
+           if(bbs[i] < bbs[j]){
+               var x = bbs[i]
+               bbs[i] = bbs[j]
+               bbs[j]= x
+           }
+       }
+   }
+   console.log(bbs)
+ // subset of string
+ let str = 'dog'
+ let subset=[]
+ for(let i = 0;i<str.length;i++){
+     for(let j = i+1;j<str.length+1;j++){
+         subset.push(str.slice(i,j))
+     }
+ }
+ console.log(subset)
+
+ // getting first element from array
+
+let first = [1,[2,3,4],5,6]
+console.log(first[0])
+
+let last =  [1,[2,3,4],5,6]
+console.log(last[last.length -1])
+
+//joining all array of elements
+
+let myColor = ["red",'Green','black']
+console.log(myColor.toString())
+console.log(myColor.join('+'))
+
+// sum of array
+
+let arrSum = [1,2,3,4]
+let sum = 0;
+for(let i = 0; i<arrSum.length;i++){
+    sum = sum + arrSum[i]
+}
+console.log(sum)
+</script>

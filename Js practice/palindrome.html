@@ -1,0 +1,25 @@
+<script>
+//     let str = prompt('enter the string')
+//     function palindrome(str){
+//         for(let i = 0 ; i<str.length ; i++){
+//             if(str[i] !== str[str.length -1 - i]){
+//                 return false
+//             }
+//         }
+//         return true
+//     }
+//    console.log(palindrome(str))
+let name = prompt('enter name :')
+
+function palindrome(name){
+    for(let i=0 ; i<=name.length; i++){
+        if(name[i] !== name[name.length - 1 -i]){
+            alert('Not a palindrome')
+        }
+        else{
+            alert('palindrome')
+        }
+    }
+}
+console.log(palindrome(name))
+</script>

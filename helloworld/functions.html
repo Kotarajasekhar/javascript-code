@@ -1,0 +1,83 @@
+<script>
+    // var n = 5 , r = 3 ,nCr = 1,rf =1 , nmrf =1 ,nf =1 
+    // for(var i=1;i<=5;i++){
+    //     nf=nf*i
+    // }
+    // console.log(nf)
+    // for(var i=1;i<=3;i++){
+    //     rf=rf*i
+    // }
+    // console.log(rf)
+
+    // for (var i=1;i<=(n-r);i++){
+    //     nmrf=nmrf*i
+    // }
+    // console.log(nmrf)
+    
+    // nCr=(nf)/(rf*nmrf)
+    // console.log(nCr)
+
+    var n = 3 ,r =2 , nCr=1,nf=1,rf=1,nmrf=1
+    function facto(x){  // x is called as parameter
+        var f = 1
+        for(var i = 1;i<=x;i++){
+            f = f*i
+        }
+        return f
+    }
+    nf = facto(n) // n is argument
+    rf = facto(r)
+    nmrf = facto(n-r)
+
+    nCr = (nf)/(rf*nmrf)
+    console.log(nCr)
+
+    //callback function is like that  calling function into another function
+    var q=1;
+    function add(a,b,c){
+        var z;
+        z=a+b
+        c(z)
+    }
+    add(1,2,function xyz(){
+        console.log('this is call back function')
+    })
+
+    setTimeout(() => {console.log('this is setTime out function ,this is one of the call back')},3000)
+    //setInterval(() => {console.log('this is setInterval out function ,this is one of the call back')},3000)
+
+    var i=1;
+    var res=setInterval(()=>{
+        console.log(i++)
+        if(i==5){
+            clearInterval(res)
+        }
+    },2000)
+   //function call in function is called HOF
+
+   var s=function sum(a,b){
+      return sum
+   }
+   var x = s
+  
+
+  // if we didnt pass any arguments then it will become undefined
+
+  function fun1(from,text){
+        alert(from + "" + text)
+  }
+  fun1('rajasekhar')
+  document.write('<br>')
+ 
+  //apply method
+  //The apply() method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+  const numbers = [1,2,3,4,5,77,8]
+  const applyResult = Math.max.apply(null,numbers)
+  document.write(applyResult)
+  document.write('<br>')
+ 
+  // bind method    
+  
+
+
+</script>

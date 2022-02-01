@@ -1,0 +1,274 @@
+<script>
+let array = [1,"Raja","sekhar"]
+document.write(array)
+document.write("<br>");
+array.unshift("name") // adds new element at starting index
+document.write(array)
+document.write("<br>");
+
+array.shift()  // removes starting element in array
+document.write(array)
+document.write("<br>");
+
+array.push("Reddy")  // adds new element in last index
+document.write(array)
+document.write("<br>");
+
+array.pop()   // removes last elements from array
+document.write(array)
+document.write("<br>");
+
+//delete an array
+delete array[2]
+document.write(array)
+document.write("<br>");
+  
+document.write(array.length)
+document.write("<br>");
+
+// SPLICE 
+// syntax is   array.splice(start [,deleteCount,element1..... elementn])
+
+let arr = ["I","am","Rajasekhar"]
+
+arr.splice(3,0,"from","yrp")   // add new elements into the array
+document.write(arr)
+document.write("<br>");
+
+arr.splice(3,4)   // remove elements from count 3 to 4
+document.write(arr)
+document.write("<br>");
+
+arr.splice(0,2,"This","is")  // removes starting 0 to 2nd elements and replace with "this" "is"
+document.write(arr)
+document.write("<br>");
+
+//slice
+//syntax  array.slice([start],[emd]) 
+let letters = ['t','e','l','u','g']
+document.write(letters)
+document.write("<br>");
+
+document.write(letters.slice(2,4))
+document.write("<br>");
+
+//concat 
+
+let arr1 = [1,2]
+document.write(arr1.concat([3,4]))
+document.write("<br>"); 
+// document.write(user.name)
+document.write("<br>");
+
+//filter
+let users1 = [ 
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+]
+
+let user1 = users1.filter(item => item.id < 3)
+document.write(user1.length)
+document.write("<br>");
+
+//split
+
+// let names ="Raja,sekhar,kota"
+// let arr = names.split(', ')
+// for(let name of arr){
+//   alert(`a message to ${name}.`)
+// }
+// document.write("<br>");
+
+let str = "test";
+document.write( str.split('') )  // splits the word into letters
+document.write("<br>");
+
+
+//TASKS
+// Write the function camelize(str) that changes dash-separated words like “my-short-string” into camel-cased “myShortString”.
+
+// That is: removes all dashes, each word after dash becomes uppercased.
+
+// Examples:
+
+// camelize("background-color") == 'backgroundColor';
+// camelize("list-style-image") == 'listStyleImage';
+// camelize("-webkit-transition") == 'WebkitTransition';
+
+let str1 = "my-short-string"
+function camelize(str1) {
+  return str1.split('-').map((word,index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1))
+  .join('')
+}
+document.write(camelize(str1))  
+document.write("<br>");
+                                             //gives my,short,string first before do map 
+                                            // gives my,Short,String   when do map and slice
+                                            
+
+
+//remove duplicates from array
+
+let duplicated = ["raja",'sekhar',"raja"]
+let uniqueChars = [...new Set(duplicated)]
+document.write(uniqueChars)
+document.write("<br>");
+
+let chars = ['a','a','b','c']
+let dupCharsRemove=[]
+chars.map((items)=> {
+if(!dupCharsRemove.includes(items)){
+  dupCharsRemove.push(items)
+}})
+
+document.write(dupCharsRemove)
+
+// ------------------
+
+const array1 =[12,23,34,45]
+var res = array1.map((items,i,c) => {
+  console.log('hello',items,i,c)
+  return 'hi'
+})
+console.log(res)
+// we can use forEach also but map will return where as forEach cannot
+
+console.log(array1.includes(12))
+
+// Q) multiply with 10
+
+const arr2 = [10,20,30,40,50,60]
+var res1 = arr2.map((items) => {
+      var mult = items * 10
+      return mult 
+})
+var rem = res1.filter((items) => {
+  if(items > 350){
+    return true
+  }
+})
+console.log(res1)
+console.log(rem)
+// filter method also works same as map method but the difference is filter depends upon return value
+
+//reduce method is like reduce the values and returns a (last)single value
+var ar = [12,23,34,45,56,67,11,24,5]
+console.log(ar.length)
+var res1 = ar.reduce((x,i) => {
+  console.log('hi',x,i)
+  return x+i  // x+i vello x lo kurchuntadi....
+})
+console.log(res1)
+
+// sorting
+
+ar.sort((a,b) => {
+  if(a>b){
+    return 1
+  }
+  else{
+    return -1
+  }
+})
+console.log(ar)
+document.write("<br>");
+
+//concat
+
+let ar1 = [1,2,3]
+let ar2 = [4,5,6]
+let ar3 = [7,8,9]
+document.write(ar1.concat(ar2,ar3))
+document.write("<br>");
+
+// find index of particular element
+
+let fruits = ['apple','mangoe','orange']
+document.write(fruits.indexOf('apple'))
+document.write("<br>");
+
+// copies within -----> The copyWithin() method 
+//shallow copies part of an array to another location in the same array and returns it without modifying its length.
+// syntax: copyWithin(target)
+// copyWithin(target, start)
+// copyWithin(target, start, end)
+const array11 = ['a', 'b', 'c', 'd', 'e','f'];
+document.write(array11.copyWithin(0,3,4))
+document.write("<br>");
+document.write(array11.copyWithin(1))
+
+document.write("<br>");
+// Array.prototype.every()
+// The every() method tests whether all elements in the array pass the test implemented by the provided function.
+//  It returns a Boolean value.
+
+const checkEvery = Every => Every < 10;
+const everyArr = [1,2,3,4,5,6]
+document.write(everyArr.every(checkEvery))
+
+document.write("<br>");
+// Array.prototype.filter()
+// The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+let filterArray = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present']
+let filterArrayResult = filterArray.filter((filters) => filters.length > 6)
+document.write(filterArrayResult)
+document.write("<br>");
+
+//FIND is used to find the element that identify very first in the array
+
+let findArray = [1,2,3,4,456,789,09]
+let findArrayResult = findArray.find((finding) =>finding > 4 )
+document.write(findArrayResult)
+document.write("<br>");
+
+//Array.prototype.flat()
+// The flat() method creates a new array with all sub-array elements concatenated into 
+// it recursively up to the specified depth.
+
+let flatArray = [1,2,3,[4,5,6]]
+let flatArrayResult = flatArray.flat()
+document.write(flatArrayResult)
+document.write("<br>");
+let flatArray1 = [10,20,30,[[[40,50,60]]]]
+let flatArrayResult1 = flatArray1.flat(2)
+document.write(flatArrayResult1)
+document.write("<br>");
+
+const maparray = [1, 4, 9, 16]
+const mapArrayResult = maparray.map((maps) => maps)
+document.write(maparray)
+document.write("<br>");
+
+const forEachArray = [1, 4, 9, 16]
+const forEachArrayResult = forEachArray.forEach((forEach) => forEach)
+document.write(forEachArrayResult)
+document.write("<br>");
+
+// Array.prototype.splice()
+// The splice() method changes the contents of an array by removing or replacing existing
+//  elements and/or adding new elements in place
+
+// syntax: 
+// splice(start, deleteCount, item1, item2, itemN)
+
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb')
+document.write(months)
+document.write("<br>");
+
+const resultedMonths = ['Jan', 'Feb','March', 'April', 'June'];
+resultedMonths.splice(4,1,'May')
+document.write(resultedMonths)
+document.write("<br>");
+
+// Array.prototype.slice()
+// The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end 
+// not included) where start and end represent the index of items in that array. The original array will not be modified.
+const sliceAnimals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+document.write(sliceAnimals.slice(2))
+document.write("<br>");
+document.write(sliceAnimals.slice(2,4))
+
+
+</script>

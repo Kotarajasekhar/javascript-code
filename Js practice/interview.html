@@ -1,0 +1,9 @@
+<script>
+const duplicateArrayRemove=['a','a','b','c']
+function array(duplicateArrayRemove){
+    return duplicateArrayRemove.filter((item,index) => {
+        duplicateArrayRemove.indexOf(item) === index
+    })
+ }
+document.write(array(duplicateArrayRemove))
+</script>

@@ -1,0 +1,12 @@
+<script>
+    function capitalizeFirstLetter(str){
+        let array = str.split('')
+        let newArray = []
+        for(let i= 0 ;i<array.length ; i++){
+            newArray.push(array[i].charAt(0).toUpperCase() + array[1].slice())
+        }
+        return newArray.join('')
+    }
+    let res = capitalizeFirstLetter('the')
+    console.log(res)
+</script>

@@ -1,0 +1,224 @@
+<script>
+//     const data = {
+//         name :"Rajasekhar",
+//         age:29
+//     }
+//     document.write(data.name)
+//     // multiword in object
+//    data["likes birds"] = true
+//    document.write(data["likes birds"])
+//    document.write(data.age)
+
+//    //computed properties
+
+//    let fruit = prompt("Which fruit to buy?", "apple");
+//    let bag = {};
+
+// // take property name from the fruit variable
+//    document.write(bag[fruit] = 5);
+// =========================
+
+function xyz(){
+    console.log(this) // window object
+}
+xyz() // window object
+
+function Employee(){
+    console.log(this)
+}
+new Employee()   // empty object 
+
+var y = Employee()
+console.log(y)
+
+// new keyword creates empty object 1st
+
+function Check(){
+    var a = 10
+    console.log(a)
+}
+Check()
+
+function fun(){
+    //var a1 =100
+    this.a1 = 100
+    //var b1 = 200
+    this.b1=200
+}
+var p = new fun()
+console.log(p)
+// bascially ikada manam new use chesthe empty object create avtadhi [ fun ; {}]  so....this use chesthe manam pampaalsina data pothadhi
+
+var obj = {
+    firstName:'Rajasekhar',
+    lastName:'Kota',
+    age:27,
+    gender:'male',
+    k:66,
+    'date of birth' :1994
+}  // javascript object notation
+
+var k ='lastName'
+
+console.log(obj.firstName)
+console.log(obj.lastName)
+console.log(obj.age)
+console.log(obj['gender'])
+// if we have key (mentiones already) with another variable
+console.log(obj.k)  // we cant access becs it is not there in object
+console.log(obj[k]) 
+console.log(obj['k'])
+
+console.log(obj['date of birth'])
+
+// to iterate in objects we use 'for in'
+
+var obj1 = {
+    firstName:'Rajasekhar',
+    lastName:'Kota',
+    age:27,
+    gender:'male',
+    k:66,
+    'date of birth' :1994,
+    address:{
+        hno:124,
+        street:'colony',
+        location:'yrp',
+        city:'nellore'
+    },
+    technologies:['react','angular','java']
+} 
+for( let g in obj1){
+    console.log('hello') // hello 6 times vastadhi run ayyi
+    console.log('hello',g)
+    console.log('hello',g,obj1[g])
+    console.log(obj1.address['hno'])
+}
+
+// array of objects
+
+var students = [{
+    firstName:'Rajasekhar',
+    lastName:'Kota',
+    age:27,
+    gender:'male',
+},
+{ 
+    firstName:'Raja',
+    lastName:'Kotas',
+    age:25,
+    gender:'male',
+},
+{
+    firstName:'sekhari',
+    lastName:'Kotass',
+    age:29,
+    gender:'female',
+}
+]
+
+for(let i = 0 ; i<=students.length-1;i++){
+    console.log(students[i].firstName)
+    if(students[i].gender === 'male'){
+    console.log(students[i].age)
+
+    }
+}
+
+// sorting 
+
+students.sort((a,b) =>{
+  if(a.lastName>b.lastName){
+      return 1
+  }
+  else{
+      return -1
+  }
+})
+console.log(students)
+
+// another way to define an object
+
+var ob = {}
+
+Object.defineProperty(ob,'firstName',{
+    value:'Rajasekhar',
+    enumerable:true
+
+})
+Object.defineProperty(ob,'lastName',{
+        value:'Kota'
+})
+
+// at a time to define objects
+ Object.defineProperties(ob,{
+     'age':{
+         value:27,
+         writable:true
+     }
+ })
+console.log(ob)
+ob.age=29
+// we can stop iteration by placing enumerabke as true in any object
+
+for(let k in ob){
+    console.log(ob[k])
+}
+
+var check = [1,2,3,4,5,6,7,8,9]
+var res = check.reduce((items,i) => {
+   console.log('hi',items,i)
+   return items + i
+})
+console.log(res)
+document.write('<br>')
+const object = {}
+console.log(object.prototype)
+
+// objects.assign 
+// it is useful to assign all the properties from source object to target object  
+let sourceObjectAssign = {'a':1 , "b" : 2}   
+let targetObjectAssign = {'c':3 , "d" : 4}
+
+                    // syntax: Object.assign(target, ...sources)    
+let resultAssignObject = Object.assign(sourceObjectAssign,targetObjectAssign)
+console.log(sourceObjectAssign)
+console.log(targetObjectAssign)
+document.write('<br>')
+
+// Object.create 
+// is used to create new objects using existing objects as a prototype of newly created objects
+const createObjects = {
+    isHuman : false,
+    name:'Kota',
+    printIntroduction : function(){
+        console.log(`My name is ${this.name}. Am I human? ${this.isHuman}`);
+    }
+}
+document.write(createObjects.printIntroduction())
+const me = Object.create(createObjects)
+me.name = "Rajasekhar"
+me.isHuman = true
+me.printIntroduction()
+document.write('<br>')
+
+// Objects.freeze()
+ // it is used to freeze the object that is like we cannot change,add,remove and elements from objects once we freeze
+
+ let freezeObject = {
+     name : 'Rajasekhar'
+ }
+
+
+ Object.freeze(freezeObject)
+ freezeObject.name = "Kota"
+console.log(freezeObject.name)
+document.write('<br>')
+
+//isFrozen 
+// is used to check an object whether is frozen or not
+const isFrozenObject = {name : 'rajasekhar'}
+
+document.write(Object.isFrozen(isFrozenObject))
+
+</script>

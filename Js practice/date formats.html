@@ -1,0 +1,13 @@
+<script>
+   let current = new Date()
+   document.write(current)
+   document.write('<br/>')
+   let month = ("0" + (current.getMonth() + 1)).slice(-2)
+   document.write(month)
+   document.write('<br/>')
+   let date = ("0" + (current.getDate())).slice(-2)
+   document.write(date)
+   document.write('<br/>')
+   let year = current.getFullYear()
+   document.write(year)
+</script>

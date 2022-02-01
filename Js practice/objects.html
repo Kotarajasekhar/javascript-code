@@ -1,0 +1,81 @@
+<script>
+    let obj = {
+        name : 'Rajasekhar',
+        age : 20,
+        Designation :'software developer',
+        address:  390,
+        'are you married' : 'no'
+    }
+    document.write(obj.name)
+    document.write(obj['age'])
+    document.write(obj.Designation)
+    document.write(obj.address)
+    //document.write(obj.are you married)
+    document.write(obj['are you married'])
+
+    /* how many ways we can create an empty object */
+    // 2 ways 
+    /* 1) by using object literal */
+    var obj1 = {}
+    /* 2) by using object constructor */
+    var obj1 = new Object()
+// -------
+    delete obj.address
+    document.write('address' in obj)  // 'in' is used to check the property exists or not in the object
+
+    // to itearte in the object 
+    for (let key in obj){
+        document.write(key)
+    }
+
+    function greet(){
+        document.write('hello')
+    }
+
+    obj.greet=greet
+    obj.greet()
+
+    // the keyword 'this' tells about the current object
+
+    let keyWord = {
+        surName:'kota',
+        birth:'yrp',
+        sayHi(){
+            document.write(this.surName)
+        }
+    }
+    keyWord.sayHi() // kota
+
+    /* in arrow function this keyword dont have their own object */
+
+    let arrowFun = {
+        firstName : 'rajasekhar',
+        sayhi(){
+            let arrow = () => document.write(this.firstName)
+            arrow()
+        }
+    }
+    arrowFun.sayhi()
+    
+    /* javascript object constructor  is used to create multiple objects 
+    The name of a constructor function starts with a capital letter 
+    new keyword is used to create an object */
+   function Person(firstNames,lastNames){
+            this.firstNames = firstNames;
+            this.lastNames = lastNames;
+   }  
+   let person = new Person('rajasekhar','kota') 
+   document.write(person.firstNames)
+  
+   function Circle(radius){
+       this.radius=radius
+       this.draw=function(){
+           document.write('draw')
+       }
+   }
+   let circle = new Circle(1)
+   document.write(circle.radius)
+
+   /* proto types of objects */
+   
+</script>

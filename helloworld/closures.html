@@ -1,0 +1,78 @@
+<script>
+    // var outer_variable = 1
+    // function outer_func(){
+    //     var inner_variable = 2
+    //     function inner_func(){
+    //         document.write(inner_variable)
+    //     }
+    //     return inner_func
+    // }
+    // var result = outer_func()
+    // result()
+
+   //------------- 
+    
+    //closure : closure is a scope ,that gives an access to a function even after complete the function 
+    //i.e we can access inner scope variables after the outer function
+
+    // var x = 111;
+    // function f1(){
+    //     var y = 222
+    //     function f2(){
+    //        document.write('this is inner function',y)
+    //     }
+    //    return f2() //here return is mandatory for closure
+    // }
+    // var x1 = f1()
+    // //document.write(outer_var())
+    // console.dir(x1)
+    // x1
+
+    // var name1="chrome"
+    // function init(){
+    //     var name = "Mozila"
+    //     function displayName(){
+    //         alert(name1)
+    //         alert(name)
+    //     }
+    //     displayName()
+    // }
+    // init()
+    // //p()
+
+    // function makeFunc() {
+    // var name = 'Mozilla browser';
+    // function displayName() {
+    //     alert(name);
+    // }
+    // return displayName;
+    // }
+
+    // var myFunc = makeFunc();
+    // myFunc();
+
+    // function x(){
+    //     var a = 7;
+    //     function y(){
+    //         console.log(a)
+    //     }
+    //     return y
+    // }
+    // let result = x()
+    // console.log(result())
+    
+    //A closure is the combination of a function bundled together 
+    //(enclosed) with references to its surrounding state (the lexical environment).
+    //In other words, a closure gives you access to an outer function’s scope from an inner function
+
+    function outer(){
+        var a = 10;
+        function inner(){
+                console.log(a)
+        }
+           return inner;;
+    }
+   outer()()
+   
+ </script>
+    

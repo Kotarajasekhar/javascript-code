@@ -1,0 +1,199 @@
+
+<script>
+    /* Arrays are ordered list and called by using the index 
+    in array we can take any number of data types 
+    we can create an array in two ways
+    1) by using array constructor and array literal */
+    
+    // by using array constuctor 
+    let score = new Array(10,9,"rajasekhar")
+    document.write(score)
+    document.write('<br>')
+
+let array = ['rajasekhar','kota']
+let res = array[0]
+document.write(res)
+document.write('<br/>')
+document.write(array)
+document.write('<br/>')
+// to add an item in last index in array
+array.push('surname')
+document.write(array)
+document.write('<br/>')
+
+// to remove an element from array ,we use POP ---it removes an element from the last index
+array.pop()
+document.write(array)
+document.write('<br/>')
+
+// to add an element in the first index -- we use unshift method 
+array.unshift('shift')
+document.write(array)
+document.write('<br/>')
+
+// to remove an element from 1st index we use shift method
+array.shift()
+document.write(array)
+document.write('<br/>')
+document.write(array.length)
+document.write('<br/>')
+
+//splice 
+/* syntax : arr.splice(start[, deleteCount, elem1, ..., elemN])
+gives the remaining items after removing from an array */
+
+let arrSplise = ["I", "study", "JavaScript", "right", "now"]
+arrSplise.splice(0,3);  // removes from 0 index and upto (3-1) index
+document.write(arrSplise)
+document.write('<br/>')
+arrSplise.unshift("I", "study", "JavaScript")
+document.write(arrSplise)
+document.write('<br/>')
+arrSplise.splice(0,3,'I','am','rajasekhar')
+document.write(arrSplise)
+document.write('<br/>')
+
+let arrNegativeIndex=[1,2,5,6,7,9,10]
+arrNegativeIndex.splice(-1,2)
+document.write(arrNegativeIndex)
+document.write('<br/>')
+arrNegativeIndex.splice(-1,2,3,4)
+document.write(arrNegativeIndex)
+document.write('<br/>')
+
+/* slice is used as like a splice only ,here slice gives the output of which items removed
+syntax:slice(start,end) */
+let arrSlices = ["t", "e", "s", "t"]
+document.write(arrSlices.slice(1,3))
+document.write('<br/>')
+
+/*concat: it is used to add an values from another array
+it created new array */
+let concat1 = [1,2,3]
+let concat2 = [4,5,6]
+let resultConcat=concat1.concat(concat2)
+document.write(resultConcat)
+document.write('<br/>')
+
+let concat3 = ['a','b','c']
+let spreadOperat=[...concat3,'d','e']
+document.write(spreadOperat)
+document.write('<br/>')
+
+/* forEach: its used to run a function for every element 
+syntax:array.forEach(item,index,array)   */
+
+let foreachArr = ["Bilbo", "Gandalf", "Nazgul"]
+foreachArr.forEach(alert)
+
+/* search method in array 
+1)array.indexOf --- searched for the index from the starting and if it found return that element in that index
+ and if not found it returns -1   
+ syntax: array.indexOf(item,from)
+ 2)array.lastIndexOf --searched for an item from last 
+    sntax:array.lastIndexOf(item,from)
+ 3)array.includes(item,from)  -- returns true if found that item */
+
+ let SearchingArray = [1, 0, false]
+ let resultIndexOf = SearchingArray.indexOf(0)
+ document.write(resultIndexOf)
+document.write('<br/>')
+ let resultLastIndexOf=SearchingArray.lastIndexOf(0)
+ document.write(resultLastIndexOf)
+document.write('<br/>')
+ let resultIncludes = SearchingArray.includes(2)
+ document.write(resultIncludes)
+document.write('<br/>')
+
+/* find and findIndex 
+find is used to search the array of objects easily 
+if the item is found then return true otherwise undefined 
+findIndex is same as find but the item didnt find then it reuturns -1 */
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+let user = users.find(item => item.name)
+document.write(user.name)
+document.write('<br/>')
+
+/*filter : filter is used to looks for multiple elements 
+ syntax: array.filter(function(item,index,array){
+ }   */
+ let cities = [
+    {name: 'Los Angeles', population: 3792},
+    {name: 'New York', population: 8174},
+    {name: 'Chicago', population: 2695},
+    {name: 'dollus', population: 2099},
+    {name: 'virgina', population: 1526},
+];
+//document.write(citiesFilter.length)
+let bigCities = []
+for(let i = 0 ; i < cities.length;i++){
+    if(cities[i].population > 3000){
+       bigCities.push(cities[i])
+    }
+}
+document.write(bigCities)
+document.write('<br/>')
+
+let CitiesAfterFilter = cities.filter((populations) => {
+    return populations.population > 3000
+})
+document.write(JSON.stringify(CitiesAfterFilter))
+document.write('<br/>')
+/* Map : its used to call the function for each element and gives the result of array 
+ syntax: array.map(function(item,index,array){
+
+ })   */
+let citiesMap = ["Rajasekhar","Kota","Hyderabad","Mumbai"];
+let mapCity = citiesMap.map((item) => {
+  return item
+})
+document.write(mapCity)
+document.write('<br/>')
+
+/* sort:it is used to sort the items in ascending order */
+let arrSort =[0, 1 , 2, 3, 10, 20, 30 ]
+let resSort = arrSort.sort()
+document.write(resSort)
+document.write('<br/>')
+
+/* reverse: reverse the array items */
+let arrRev = [0, 1 , 2, 3, 10, 20, 30 ]
+let resRev = arrRev.reverse()
+document.write(resRev)
+document.write('<br/>')
+
+/* split is used to remove any extra ,s like that */
+let namesSplit = 'Bilbo, Gandalf, Nazgul';
+let resNamesSplit = namesSplit.split(',')
+for(let name of resNamesSplit){
+    document.write(`${name}`)
+}
+document.write('<br/>')
+
+let namesSpliting = 'Bilbos, Gandalfs, Nazguls';
+let resNamesSpliting = namesSplit.split(',',2)
+for(let naming of resNamesSpliting){
+    document.write(`${naming}`)
+}
+document.write('<br/>')
+let namesSplitingLetters = 'Test, developer, approver'
+let result = namesSplitingLetters.split('')
+document.write(result)
+document.write('<br/>')
+let resultJoining = result.join('')
+document.write(resultJoining)
+
+
+
+
+
+
+
+
+/* removing duplicate arrays from an array */
+</script>
+ 

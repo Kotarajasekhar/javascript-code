@@ -1,0 +1,38 @@
+<script>
+//     let f1 = (call_f2) => {
+//         document.write("this is f1 complets")
+//      call_f2()
+//     }
+
+//     let f2 = () => {
+//         document.write("this is f2 start")
+
+//     }
+//     // f1()
+//     // document.write("<div>")
+
+//     // f2()
+//    f1(f2)
+
+/* a function calling another function as an argument is called callback */
+setTimeout(function(){
+  console.log('timer')
+},5000)
+function x(y){
+    console.log('y')
+    y()
+}
+x(function y(){
+    console.log('y')
+})
+
+function greeting(name) {
+  alert('Hello ' + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+}
+processUserInput(greeting)
+</script>

@@ -1,0 +1,67 @@
+<script>
+    // proto type is an object which is shared memory which creates when function is created
+    function abc(){
+
+    }
+    abc.prototype.a=100
+    abc.prototype.b = 200
+    console.dir(abc)
+    console.dir(abc.length)
+
+    //creating object
+    var e1 = new abc()
+    console.log(e1)
+    console.dir(e1.a)
+  // we can create many objects and for every object the values are same like a =100 and b = 200
+
+ var Employee = function() {
+        this.a = 100
+ }
+ Employee.prototype.a = 'Rajasekhar'
+ console.dir(Employee)
+
+ var e1 = new Employee()
+ console.dir(e1.a)
+ console.log(e1.__proto__.a)
+ e1.c = 300
+ console.dir(e1)
+ Employee.prototype.b=101
+ console.dir(Employee)
+ console.log(e1.__proto__.b)
+ var e2 = new Employee()
+ console.dir(e2)
+ e2.d=400
+ console.dir(e2)
+ e2.d='changed value'
+ console.dir(e2)
+ 
+ // prototype methods
+
+ var emp = function (fn,ln){
+     this.firstName = fn,
+     this.lastName = ln
+     this.getFullName = function(){
+         return this.firstName + this.lastName
+     }
+     
+ }
+ var res1 = new emp('Raja','sekhar')
+ var res2 = new emp('Raja','kota')
+ console.dir(res1)
+ console.dir(res2)
+
+ var emp1 = function (fn,ln){
+    this.firstName = fn,
+     this.lastName = ln 
+ }
+ emp.prototype.getFullName = function () {
+     return this.firstName + this.lastName
+ }
+ var e1=new emp('r','s')
+ var e2=new emp('re','so')
+ console.dir(e1.getFullName())
+ console.dir(e2.getFullName())
+
+
+   
+</script>

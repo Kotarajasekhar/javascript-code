@@ -1,0 +1,46 @@
+<script>
+    /* closures are like referencing variables in the outer scope from the inner scope */
+
+    let var1 = 10
+    function fun(){
+        let message = 'hi'
+        document.write(message + " " + var1)
+    }
+    fun()
+   document.write('<br/>')
+    // lexical scoping
+        function lex(){
+            let msg = 'Hi'
+            function nestFunc(){
+                document.write(msg)
+            }
+            nestFunc()
+        }
+        lex()
+        document.write('<br/>')
+
+    // closure
+    function greeting(){
+        let closureExample='Closures'
+        function nestedClosures(){
+            document.write('Hi' + " " + closureExample)
+        }
+       return nestedClosures
+    }
+    let result = greeting()
+    result()
+   document.write('<br/>')
+   
+   let test = 'ram'
+   function testing(){
+       let test1='rahim'
+      function test2(){
+          document.write('hello' + " " + test)
+      }
+      test2()
+   }
+   let res1=testing()
+   res1()
+
+
+</script>

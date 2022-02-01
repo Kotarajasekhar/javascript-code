@@ -1,0 +1,45 @@
+<script>
+    // how to create an objects ??
+    function Chair(t,cat,c,b){
+        this.type = t,
+        this.date = Date.now(),
+        this.category = cat,
+        this.cost = 0 ,
+        this.billUrl = b
+    }
+
+    var ch1 = new Chair('plastic','non-rotate',123,'kgf.jpg')
+    console.dir(ch1)
+
+    // i want to get the last date from currnt date
+
+    function Chair1(t,cat,c,b,d){
+        this.type = t,
+        this.date = d,
+        this.category = cat,
+        this.cost = 0 ,
+        this.billUrl = b,
+        this.getAge = function(){
+            var cd = Date.now()
+            var purD = (new Date(this.date)).getTime();
+            var age = (cd-purD)/(1000*60*60*24*365)
+            return age
+        }
+    }
+
+    var ch2 = new Chair1('plastic','non-rotate',123,'kgf.jpg','11-02-2020')
+    console.dir(ch2.getAge())
+
+    // object is like in objects we found properties ,methods and events
+
+    const arr = [12,'str',23,43]
+    // 'encapsulation' means wrapping data into one object or protective sheet that prevents inside data from the outside 
+    console.log(arr)
+    console.dir(arr)
+    console.log(typeof(arr)) // gives an 'object' becz everything is a object
+
+    const arr1 = new Date()
+    console.dir(arr1)
+    console.log(arr1)  // it gives object
+    console.log(typeof(Date)) // gives function not an object
+</script>

@@ -1,0 +1,12 @@
+<script>
+    function calculateVolume(length){
+        return function (breadth){
+            return function (height){
+                return length * breadth * height
+            }
+        }
+    }
+
+    let result = calculateVolume(10)(20)(30)
+    document.write(result)
+</script>

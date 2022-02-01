@@ -1,0 +1,17 @@
+<script>
+    let student= {
+        name: 'John',
+        age: 30,
+        isAdmin: false,
+        courses: ['html', 'css', 'js'],
+        wife: null
+    }
+
+    let json = JSON.stringify(student)
+    document.write(json)
+    document.write('<div>')
+    let backToObject = JSON.parse(json)
+    document.write(backToObject)
+
+
+</script>

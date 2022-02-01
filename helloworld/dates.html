@@ -1,0 +1,50 @@
+<script>
+    let date = new Date()
+    document.write(date)
+    document.write('<div>')
+
+
+    let jan_1969 = new Date(-24 * 3600 * 1000)
+    document.write(jan_1969)
+    document.write('<div>')
+
+    let oct_2021 = new Date(24 * 3600 * 1000)
+    document.write(oct_2021)
+    document.write('<div>')
+
+    let date1 = new Date('2021-10-26')
+    document.write(date1)
+    document.write('<div>')
+
+    let getyear = new Date
+    document.write(getyear.getFullYear())
+    document.write('<div>')
+    document.write(getyear.getMonth())
+    document.write('<div>')
+
+// set the dates
+
+  let settingDate = new Date()
+  settingDate.setFullYear(2021,9,27)
+  document.write(settingDate)
+  document.write('<div>')
+
+  //dates can be substarcted
+
+  let dateStart = new Date()
+  for (let i = 0; i < 100000; i++) {
+  let doSomething = i * i * i;
+}
+  let dateEnd = new Date()
+  document.write(`new date is : ${dateEnd - dateStart}ms`)
+  document.write('<div>')
+
+  //Date.now()  is like new Date.getTime()   ----> used to get only time not date
+
+  let startDate = new Date()
+  for (let i = 0 ; i<10000 ; i++){
+      let doSomething = i*i*i
+  }
+  let endDate = Date.now()
+  document.write(`only time is : ${endDate - startDate}ms`)
+</script>
